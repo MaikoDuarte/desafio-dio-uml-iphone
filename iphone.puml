@@ -1,0 +1,53 @@
+@startuml Iphone
+!define Abstract class
+!define Interface interface
+
+package "iPhone" {
+  class iPhone {
+    - estado: String
+    - armazenamento: String
+
+    {abstract} + ReprodutorMusical
+    {abstract} + AparelhoTelefonico
+    {abstract} + NavegadorInternet
+
+    + ligar(): void
+    + atender(): void
+    + iniciarChamada(): void
+    + tocarMusica(): void
+    + pausarMusica(): void
+    + selecionarMusica(): void
+    + abrirSafari(): void
+    + navegarWeb(): void
+    + reproduzirVideo(): void
+    + tirarFoto(): void
+    + enviarMensagem(): void
+    + sincronizarComiTunes(): void
+    + verificarArmazenamento(): void
+  }
+
+  Interface ReprodutorMusical {
+    + tocar(): void
+    + pausar(): void
+    + selecionarMusica(): void
+  }
+
+  Interface AparelhoTelefonico {
+    + ligar(): void
+    + atender(): void
+    + iniciarChamada(): void
+  }
+
+  Interface NavegadorInternet {
+    + abrirSafari(): void
+    + navegarWeb(): void
+    + reproduzirVideo(): void
+    + tirarFoto(): void
+    + verificarArmazenamento(): void
+  }
+
+  iPhone -- ReprodutorMusical: 1..1
+  iPhone -- AparelhoTelefonico: 1..1
+  iPhone -- NavegadorInternet: 1..1
+}
+@enduml
